@@ -25,7 +25,7 @@ public class Alarm extends BroadcastReceiver {
         AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(context, Alarm.class);
         PendingIntent pIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
-        am.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(),  100, pIntent);
+        am.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(),  1000000, pIntent);
     }
 
     //private final static String FILE = "location.txt";
@@ -50,7 +50,7 @@ public class Alarm extends BroadcastReceiver {
     Location getLastLocation(Context context) {
         LocationManager lManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
 
-        //int permissionStatus = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS);
+        int permissionStatus = ContextCompat.checkSelfPermission(context, Manifest.permission.READ_CONTACTS);
         android.location.Location locationGPS = lManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         android.location.Location locationNet = lManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 

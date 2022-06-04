@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         }   
         Toast first = Toast.makeText
                 (this,
-                        "Привет, введи адрес своей почты и поставь пароль для дайнейшего использования доп. функций",
+                        "Привет, введи адрес своей почты и поставь пароль для дальнейшего использования доп. функций",
                         Toast.LENGTH_LONG);
 
         if(pass_2.isEmpty())
